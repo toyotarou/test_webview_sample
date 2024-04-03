@@ -22,30 +22,34 @@ class MyChromeSafariBrowser extends ChromeSafariBrowser {
 
 //======================================//
 
-class FiveScreen extends StatefulWidget {
-  const FiveScreen({super.key});
+// class FiveScreen extends StatefulWidget {
+//   const FiveScreen({super.key});
+//
+//   @override
+//   State<FiveScreen> createState() => _FiveScreenState();
+// }
+//
+// class _FiveScreenState extends State<FiveScreen> {
 
-  @override
-  State<FiveScreen> createState() => _FiveScreenState();
-}
+class FiveScreen extends StatelessWidget {
+  FiveScreen({super.key});
 
-class _FiveScreenState extends State<FiveScreen> {
   final browser = MyChromeSafariBrowser();
 
-  ///
-  @override
-  void initState() {
-    browser.addMenuItem(
-      ChromeSafariBrowserMenuItem(
-        id: 1,
-        label: 'Custom item menu 1',
-        onClick: (url, title) {
-          print('Custom item menu 1 clicked!');
-        },
-      ),
-    );
-    super.initState();
-  }
+  // ///
+  // @override
+  // void initState() {
+  //   browser.addMenuItem(
+  //     ChromeSafariBrowserMenuItem(
+  //       id: 1,
+  //       label: 'Custom item menu 1',
+  //       onClick: (url, title) {
+  //         print('Custom item menu 1 clicked!');
+  //       },
+  //     ),
+  //   );
+  //   super.initState();
+  // }
 
   ///
   @override

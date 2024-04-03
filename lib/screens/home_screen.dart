@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const FiveScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FiveScreen()));
               },
               child: const Text('ChromeSafariBrowser'),
             ),
