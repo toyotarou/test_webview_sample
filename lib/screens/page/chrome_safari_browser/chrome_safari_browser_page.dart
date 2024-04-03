@@ -6,28 +6,36 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 class MyChromeSafariBrowser extends ChromeSafariBrowser {
   @override
   void onOpened() async {
-    print("ChromeSafari browser opened");
+    if (kDebugMode) {
+      print("ChromeSafari browser opened");
+    }
   }
 
   @override
   void onCompletedInitialLoad(didLoadSuccessfully) {
-    print("ChromeSafari browser initial load completed");
+    if (kDebugMode) {
+      print("ChromeSafari browser initial load completed");
+    }
   }
 
   @override
   void onClosed() {
-    print("ChromeSafari browser closed");
+    if (kDebugMode) {
+      print("ChromeSafari browser closed");
+    }
   }
 }
 
 class ChromeSafariBrowserExampleScreen extends StatefulWidget {
   final ChromeSafariBrowser browser = MyChromeSafariBrowser();
 
+  ChromeSafariBrowserExampleScreen({super.key});
+
   @override
-  _ChromeSafariBrowserExampleScreenState createState() => _ChromeSafariBrowserExampleScreenState();
+  ChromeSafariBrowserExampleScreenState createState() => ChromeSafariBrowserExampleScreenState();
 }
 
-class _ChromeSafariBrowserExampleScreenState extends State<ChromeSafariBrowserExampleScreen> {
+class ChromeSafariBrowserExampleScreenState extends State<ChromeSafariBrowserExampleScreen> {
   @override
   void initState() {
     rootBundle.load('assets/images/flutter-logo.png').then((actionButtonIcon) {
@@ -37,9 +45,15 @@ class _ChromeSafariBrowserExampleScreenState extends State<ChromeSafariBrowserEx
             description: 'Action Button description',
             icon: actionButtonIcon.buffer.asUint8List(),
             onClick: (url, title) {
-              print('Action Button 1 clicked!');
-              print(url);
-              print(title);
+              if (kDebugMode) {
+                print('Action Button 1 clicked!');
+              }
+              if (kDebugMode) {
+                print(url);
+              }
+              if (kDebugMode) {
+                print(title);
+              }
             }));
       }
     });
@@ -49,18 +63,30 @@ class _ChromeSafariBrowserExampleScreenState extends State<ChromeSafariBrowserEx
         label: 'Custom item menu 1',
         image: UIImage(systemName: "sun.max"),
         onClick: (url, title) {
-          print('Custom item menu 1 clicked!');
-          print(url);
-          print(title);
+          if (kDebugMode) {
+            print('Custom item menu 1 clicked!');
+          }
+          if (kDebugMode) {
+            print(url);
+          }
+          if (kDebugMode) {
+            print(title);
+          }
         }));
     widget.browser.addMenuItem(ChromeSafariBrowserMenuItem(
         id: 3,
         label: 'Custom item menu 2',
         image: UIImage(systemName: "pencil"),
         onClick: (url, title) {
-          print('Custom item menu 2 clicked!');
-          print(url);
-          print(title);
+          if (kDebugMode) {
+            print('Custom item menu 2 clicked!');
+          }
+          if (kDebugMode) {
+            print(url);
+          }
+          if (kDebugMode) {
+            print(title);
+          }
         }));
     super.initState();
   }
@@ -69,7 +95,7 @@ class _ChromeSafariBrowserExampleScreenState extends State<ChromeSafariBrowserEx
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
+          title: const Text(
         "ChromeSafariBrowser",
       )),
 
@@ -120,7 +146,7 @@ class _ChromeSafariBrowserExampleScreenState extends State<ChromeSafariBrowserEx
                 ),
               );
             },
-            child: Text("Open Chrome Safari Browser")),
+            child: const Text("Open Chrome Safari Browser")),
       ),
     );
   }

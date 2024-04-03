@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_webview_three_pattern/screens/page/chrome_safari_browser/chrome_safari_browser_page.dart';
-import 'package:test_webview_three_pattern/screens/page/csb/test_page.dart';
+import 'page/chrome_safari_browser/chrome_safari_browser_page.dart';
+import 'page/five/five.dart';
 
 import 'page/in_app_webview/in_app_webview_page.dart';
 
@@ -15,10 +15,10 @@ class HomeScreen extends StatelessWidget {
         children: [
           ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => InAppWebviewPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const InAppWebviewPage()));
               },
-              child: Text('InAppWebview')),
-          Divider(
+              child: const Text('InAppWebview')),
+          const Divider(
             color: Colors.redAccent,
             thickness: 5,
           ),
@@ -26,11 +26,16 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ChromeSafariBrowserExampleScreen()));
               },
-              child: Text('ChromeSafariBrowser')),
-          Divider(
+              child: const Text('ChromeSafariBrowser')),
+          const Divider(
             color: Colors.redAccent,
             thickness: 5,
           ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const FiveScreen()));
+              },
+              child: const Text('FiveScreen')),
         ],
       ),
     );

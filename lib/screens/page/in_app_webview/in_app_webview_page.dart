@@ -14,9 +14,9 @@ class InAppWebviewPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: 20),
-            Text('InAppWebviewPage', style: TextStyle(color: Colors.white)),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
+            const Text('InAppWebviewPage', style: TextStyle(color: Colors.white)),
+            const SizedBox(height: 20),
             Expanded(
               child: InAppWebView(
                 initialUrlRequest: URLRequest(url: WebUri('https://www.google.co.jp/')),
