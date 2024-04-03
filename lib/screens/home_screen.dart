@@ -10,33 +10,25 @@ class HomeScreen extends StatelessWidget {
   ///
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: [
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const InAppWebviewPage()));
-              },
-              child: const Text('InAppWebview')),
-          const Divider(
-            color: Colors.redAccent,
-            thickness: 5,
-          ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ChromeSafariBrowserExampleScreen()));
-              },
-              child: const Text('ChromeSafariBrowser')),
-          const Divider(
-            color: Colors.redAccent,
-            thickness: 5,
-          ),
-          ElevatedButton(
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            ElevatedButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const FiveScreen()));
               },
-              child: const Text('FiveScreen')),
-        ],
+              child: const Text('ChromeSafariBrowser'),
+            ),
+            const Divider(color: Colors.redAccent, thickness: 5),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const InAppWebviewPage()));
+              },
+              child: const Text('InAppWebview'),
+            ),
+          ],
+        ),
       ),
     );
   }

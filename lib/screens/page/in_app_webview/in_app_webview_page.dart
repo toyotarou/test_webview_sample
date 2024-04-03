@@ -19,7 +19,9 @@ class InAppWebviewPage extends StatelessWidget {
             const SizedBox(height: 20),
             Expanded(
               child: InAppWebView(
-                initialUrlRequest: URLRequest(url: WebUri('https://www.google.co.jp/')),
+                initialUrlRequest: URLRequest(
+                  url: WebUri('https://www.google.co.jp/'),
+                ),
               ),
             ),
           ],
